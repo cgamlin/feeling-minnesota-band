@@ -1,0 +1,26 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #282c34;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+.navigation-list li {
+  cursor: pointer;
+}
+
+.navigation-list .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
