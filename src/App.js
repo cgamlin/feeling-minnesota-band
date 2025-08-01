@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Media from './components/Media';
+import Shows from './components/Shows';
 
 export const ActivePageContext = createContext();
 
@@ -19,6 +20,8 @@ function App() {
         return <Contact />;
       case '/media':
         return <Media />;
+      case '/shows':
+        return <Shows />;
       default:
         return <Home />;
     }
