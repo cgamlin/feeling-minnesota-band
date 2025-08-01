@@ -13,7 +13,7 @@ nav {
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .navigation-list li {
@@ -27,7 +27,7 @@ nav {
 
 .navigation-list .active {
   font-weight: bold;
-  text-decoration: underline;
+  color: #61dafb;
 }
 
 a {

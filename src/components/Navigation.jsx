@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 import { ActivePageContext } from '../App';
 import '../styles/Navigation.css';
@@ -12,6 +12,7 @@ export default function Navigation() {
     setActivePage(page);
   };
   const fbLink = "https://www.facebook.com/profile.php?id=61576281586529";
+  const ytLink = "https://www.youtube.com/"
 
   return (
     <nav>
@@ -22,6 +23,9 @@ export default function Navigation() {
         <li className={activePage === '/contact' ? 'active' : ''} onClick={() => handleNavigation('/contact')}>Contact</li>
         <a href={fbLink} target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faFacebook} />
+        </a>
+        <a href={ytLink} target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faYoutube} />
         </a>
       </ul>
     </nav>
