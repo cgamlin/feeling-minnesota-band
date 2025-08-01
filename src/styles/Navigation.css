@@ -20,7 +20,23 @@ nav {
   cursor: pointer;
 }
 
+.navigation-list li:hover {
+  color: #61dafb; /* Change text color to light blue on hover */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
 .navigation-list .active {
   font-weight: bold;
   text-decoration: underline;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  color: #61dafb; /* Adjusted to a lighter blue for better contrast */
+  font-size: 1.5rem;
+}
+
+a:hover {
+  color: #ffffff; /* Change to white on hover */
 }

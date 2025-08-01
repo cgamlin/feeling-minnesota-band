@@ -1,4 +1,7 @@
 import { useContext } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+
 import { ActivePageContext } from '../App';
 import '../styles/Navigation.css';
 
@@ -8,6 +11,7 @@ export default function Navigation() {
   const handleNavigation = (page) => {
     setActivePage(page);
   };
+  const fbLink = "https://www.facebook.com/profile.php?id=61576281586529";
 
   return (
     <nav>
@@ -16,6 +20,9 @@ export default function Navigation() {
         <li className={activePage === '/media' ? 'active' : ''} onClick={() => handleNavigation('/media')}>Media</li>
         <li className={activePage === '/about' ? 'active' : ''} onClick={() => handleNavigation('/about')}>About</li>
         <li className={activePage === '/contact' ? 'active' : ''} onClick={() => handleNavigation('/contact')}>Contact</li>
+        <a href={fbLink} target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faFacebook} />
+        </a>
       </ul>
     </nav>
   );
