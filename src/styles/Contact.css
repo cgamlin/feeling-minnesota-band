@@ -12,6 +12,13 @@
   height: 100%;
 }
 
+@media (max-width: 768px) {
+  .contact-columns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 .contact-description {
   flex: 1;
   font-size: 1rem;
