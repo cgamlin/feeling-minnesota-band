@@ -15,7 +15,7 @@ export default function Navigation() {
   };
 
   const fbLink = "https://www.facebook.com/profile.php?id=61576281586529";
-  const ytLink = "https://www.youtube.com/";
+  const ytLink = "https://www.youtube.com/@feelingminnesota_band_mn";
 
   return (
     <nav>
