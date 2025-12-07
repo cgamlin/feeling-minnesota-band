@@ -15,7 +15,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +40,7 @@
 }
 
 main {
-  margin-top: 7vh;
+  margin-top: 6vh;
 }
 
 body, html {
@@ -49,4 +48,10 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 0;
+  }
 }

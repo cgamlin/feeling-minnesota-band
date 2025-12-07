@@ -2,9 +2,14 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #282c34;
+  background-color: rgba(40, 44, 52, 0.8); /* Transparent background */
   z-index: 1000;
-  padding: 1rem;
+  padding-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+  background-color: #282c34; /* Solid background on scroll */
 }
 
 .menu-toggle {
@@ -27,15 +32,18 @@ nav {
 
 .navigation-list.open {
   display: block;
+  flex-direction: column;
+  align-items: center;
 }
 
 .navigation-list li {
   cursor: pointer;
+  font-size: 1.2rem;
 }
 
 .navigation-list li:hover {
   color: #61dafb; /* Change text color to light blue on hover */
-  transition: color 0.3s ease; /* Smooth transition */
+  transition: color 0.3s ease;
 }
 
 .navigation-list .active {
@@ -55,6 +63,14 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  nav {
+    background-color: transparent;
+  }
+  nav.menu-open {
+    background-color: rgba(40, 44, 52, 0.8);
+    padding-bottom: 1rem;
+  }
+
   .menu-toggle {
     display: block;
   }

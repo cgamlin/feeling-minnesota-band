@@ -4,9 +4,9 @@ export default function About() {
   return (
     <div className="about">
       <h1>About Us</h1>
-      <p>We are a band dedicated to bringing the best music to our fans.</p>
-      <p>Follow us on our journey and stay tuned for upcoming events!</p>
-      <p>Feeling Minnesota is an acoustic band with a fresh twist on your favorite country, rock, and pop hits from the '90s, 2000s, and today. With stripped-down arrangements and three part harmonies, they bring new life to the songs you love.</p>
+      <p>Feeling Minnesota is an acoustic band made up of seasoned musicians who simply love playing live music. Blending country, rock, and pop favorites with a fresh acoustic twist, we perform the songs we love—delivering the kind of setlist that feels like your favorite playlist comes to life.</p>
+      <p>With stripped-down arrangements, rich three-part harmonies, and a laid-back, authentic vibe, we bring new energy to familiar hits. The result is a nostalgic yet modern sound that connects with any crowd.</p>
+      <p>We’re always expanding our song list across genres and are happy to take requests to make your event truly personal. Whether it’s a backyard party, a brewery night, or a special celebration, we’d love to be part of your next gathering.</p>
     </div>
   );
 }

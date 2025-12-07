@@ -41,3 +41,21 @@
   opacity: 1;
   z-index: 2;
 }
+
+/* Footer */
+footer {
+  background-color: var(--fall-brown);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer a {
+  color: var(--fall-yellow);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: var(--fall-orange);
+}

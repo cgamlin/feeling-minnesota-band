@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
@@ -8,6 +8,16 @@ import '../styles/Navigation.css';
 export default function Navigation() {
   const { activePage, setActivePage } = useContext(ActivePageContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleNavigation = (page) => {
     setActivePage(page);
@@ -18,7 +28,7 @@ export default function Navigation() {
   const ytLink = "https://www.youtube.com/@feelingminnesota_band_mn";
 
   return (
-    <nav>
+    <nav className={`${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </button>
