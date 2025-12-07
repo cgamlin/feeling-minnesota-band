@@ -1,5 +1,6 @@
 import '../styles/Contact.css';
 import { useState } from 'react';
+import Logo from './Logo';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -38,6 +39,7 @@ export default function Contact() {
 
   return (
     <div className="contact">
+      <Logo />
       <h2>Contact Us</h2>
       <div className="contact-columns">
         <div className="contact-description">

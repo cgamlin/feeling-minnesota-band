@@ -5,7 +5,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Media from './components/Media';
-import Shows from './components/Shows';
+import ShowsHeader from './components/ShowsHeader';
+import Footer from './components/Footer';
 
 export const ActivePageContext = createContext();
 
@@ -21,7 +22,7 @@ function App() {
       case '/media':
         return <Media />;
       case '/shows':
-        return <Shows />;
+        return <ShowsHeader />;
       default:
         return <Home />;
     }
@@ -36,6 +37,7 @@ function App() {
         <main>
           {renderPage()}
         </main>
+        <Footer />
       </div>
     </ActivePageContext.Provider>
   );

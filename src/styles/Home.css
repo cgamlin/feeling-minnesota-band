@@ -1,61 +1,18 @@
-.band-header {
+.band-image {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  align-items: center;
 }
 
-.band-logo {
-  width: 50px;
-  height: 50px;
-  margin-right: 1rem;
+.band-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.band-name {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #61dafb;
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-  height: 700px; /* Set a fixed height for the container */
-  overflow: hidden;
-}
-
-.responsive-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image is cropped to fit the container */
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  z-index: 1;
-  transition: opacity 1s ease-in-out;
-}
-
-.responsive-img.active {
-  opacity: 1;
-  z-index: 2;
-}
-
-/* Footer */
-footer {
-  background-color: var(--fall-brown);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-footer a {
-  color: var(--fall-yellow);
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-
-footer a:hover {
-  color: var(--fall-orange);
+@media (max-width: 768px) {
+  .home {
+    padding-top: 1rem;
+  }
 }
