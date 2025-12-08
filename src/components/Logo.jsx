@@ -1,5 +1,5 @@
 import '../styles/Logo.css';
-import bandLogo from '../assets/band-logo.jpg';
+import bandLogo from '../assets/band-logo.png';
 
 export default function Logo() {
   return (
