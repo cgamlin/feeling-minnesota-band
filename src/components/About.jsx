@@ -1,31 +1,26 @@
 import '../styles/About.css';
 import Logo from './Logo';
 
-import ashleyImg from '../assets/ashley.png';
-import chrisImg from '../assets/chris.png';
-import jeffImg from '../assets/jeff.png';
-import mitchImg from '../assets/mitch.png';
-
 export default function About() {
   const bandMembers = [
     {
       name: 'Ashley',
-      image: ashleyImg,
+      image: 'images/ashley.webp',
       bio: 'Vocals'
     },
     {
       name: 'Chris',
-      image: chrisImg,
+      image: 'images/chris.webp',
       bio: 'Electric Guitar, Vocals'
     },
     {
       name: 'Jeff',
-      image: jeffImg,
+      image: 'images/jeff.webp',
       bio: 'Vocals, Acoustic Guitar'
     },
     {
       name: 'Mitch',
-      image: mitchImg,
+      image: 'images/mitch.webp',
       bio: 'Vocals, Acoustic Guitar'
     }
   ];
