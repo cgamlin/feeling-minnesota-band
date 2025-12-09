@@ -52,6 +52,7 @@ export default function Contact() {
         <div className="contact-description">
           <p>If you are looking for entertainment for a party, BBQ, or any other type of event, then contact us here!</p>
           <p>We are available for private events, corporate gatherings, and more. Let us bring the music to your special occasion!</p>
+          <p>Email: <a className="contact-email" href="mailto:feelingminnesotaband@gmail.com">feelingminnesotaband@gmail.com</a></p>
         </div>
         <form
           name="contact"

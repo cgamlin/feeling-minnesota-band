@@ -27,6 +27,11 @@
   line-height: 1.5;
 }
 
+.contact-email {
+  font-size: 1rem;
+  display: unset;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
