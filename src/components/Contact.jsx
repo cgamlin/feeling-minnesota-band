@@ -3,39 +3,46 @@ import { useState } from 'react';
 import Logo from './Logo';
 
 export default function Contact() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [honeypot, setHoneypot] = useState('');
-  const [error, setError] = useState('');
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [submitting, setSubmitting] = useState(false);
+
+  const isFormValid = formState.name.trim() !== "" &&
+    emailRegex.test(formState.email) &&
+    formState.message.trim() !== "";
+
+  const handleChange = (e) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitting(true);
 
-    // Check honeypot field
-    if (honeypot) {
-      console.log('Bot detected');
-      return;
-    }
+    const formElement = e.target;
+    const data = new FormData(formElement);
 
-    // Validate email
-    if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address.');
-      return;
-    }
-
-    setError('');
-    console.log('Form submitted successfully');
-
-    // Clear form fields
-    setName('');
-    setEmail('');
-    setMessage('');
-    setHoneypot('');
-  };
-
-  const isFormValid = name.trim() && email.trim() && message.trim() && emailRegex.test(email);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString()
+    })
+    .then(() => {
+      alert('Thank you for your message!');
+      formElement.reset();
+      setFormState({ name: '', email: '', message: '' });
+    })
+    .catch(err => alert('We apologize, but there was an error submitting your email. Please try again later.'))
+    .finally(() => setSubmitting(false));
+};
 
   return (
     <div className="contact">
@@ -46,50 +53,30 @@ export default function Contact() {
           <p>If you are looking for entertainment for a party, BBQ, or any other type of event, then contact us here!</p>
           <p>We are available for private events, corporate gatherings, and more. Let us bring the music to your special occasion!</p>
         </div>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+        <form
+          name="contact"
+          className="contact-form"
+          method="POST"
+          onSubmit={handleSubmit}
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="subject" value={"Contact Us request from " + formState.email} />
+          <input type="hidden" name="bot-field" />
 
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          ></textarea>
-
-          {/* Honeypot field */}
-          <input
-            type="text"
-            id="honeypot"
-            name="honeypot"
-            value={honeypot}
-            onChange={(e) => setHoneypot(e.target.value)}
-            style={{ display: 'none' }}
-          />
-
-          {error && <p className="error-message">{error}</p>}
-
-          <button type="submit" disabled={!isFormValid}>Submit</button>
+          <label>Name:
+            <input type="text" name="name" value={formState.name} onChange={handleChange} required />
+          </label>
+          <label>Email:
+            <input type="email" name="email" value={formState.email} onChange={handleChange} required />
+          </label>
+          <label>Message:
+            <textarea name="message" value={formState.message} onChange={handleChange} required />
+          </label>
+          <button type="submit" disabled={!isFormValid || submitting}>
+            {submitting ? 'Submitting...' : 'Submit'}
+          </button>
         </form>
       </div>
     </div>
