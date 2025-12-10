@@ -3,7 +3,7 @@ import Shows from './Shows';
 
 export default function ShowsHeader() {
   return (
-    <div>
+    <div className="shows">
       <Logo />
       <Shows />
     </div>

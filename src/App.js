@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Media from './components/Media';
 import ShowsHeader from './components/ShowsHeader';
+import Songs from './components/Songs';
 import Footer from './components/Footer';
 
 export const ActivePageContext = createContext();
@@ -23,6 +24,8 @@ function App() {
         return <Media />;
       case '/shows':
         return <ShowsHeader />;
+      case '/songs':
+        return <Songs />;
       default:
         return <Home />;
     }

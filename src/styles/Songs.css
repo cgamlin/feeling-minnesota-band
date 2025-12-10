@@ -1,0 +1,29 @@
+.songs-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.song-item {
+  h4 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: unset;;
+    color: white;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .songs {
+    padding-top: 3rem;
+  }
+
+  .songs-content {
+    grid-template-columns: 1fr;
+    width: fit-content;
+  }
+}

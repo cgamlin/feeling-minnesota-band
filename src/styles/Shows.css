@@ -46,3 +46,9 @@ h2, p {
 .show-item button:active {
   transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+  .shows {
+    padding-top: 3rem;
+  }
+}

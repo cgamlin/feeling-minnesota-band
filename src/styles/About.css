@@ -45,6 +45,10 @@
 }
 
 @media (max-width: 768px) {
+  .about {
+    padding-top: 3rem;
+  }
+
   .band-members {
     grid-template-columns: 1fr;
   }
