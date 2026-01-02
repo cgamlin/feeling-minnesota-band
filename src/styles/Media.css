@@ -3,7 +3,7 @@
   padding: 0 1em;
 }
 
-.video-container {
+.videos-container {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -13,8 +13,17 @@
   padding-bottom: 1rem;
 }
 
-.video-container iframe {
+.videos-container iframe {
   aspect-ratio: 16 / 9;
+}
+
+.video-container {
+  label {
+    font-size: 0.875rem;
+  }
+  iframe {
+    margin-top: 0.25rem;
+  }
 }
 
 @media (max-width: 768px) {

@@ -2,6 +2,7 @@ import '../styles/Shows.css';
 
 export default function Shows() {
   const shows = [
+    { date: 'April 18, 2026', event: 'Private Gala Show' },
     { date: 'November 15, 2025', event: 'Farmington Dance Parents Night Out', location: 'Celts Pub, Farmington, MN' },
     { date: 'August 5, 2025', event: 'Private Event for National Night Out', location: 'Lakeville, MN' },
     { date: 'July 26, 2025', event: 'Private BBQ Event', location: '' }
