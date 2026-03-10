@@ -1,13 +1,7 @@
 import '../styles/Shows.css';
+import shows from '../data/shows.js';
 
 export default function Shows() {
-  const shows = [
-    { date: 'April 18, 2026', event: 'Private Gala Show' },
-    { date: 'November 15, 2025', event: 'Farmington Dance Parents Night Out', location: 'Celts Pub, Farmington, MN' },
-    { date: 'August 5, 2025', event: 'Private Event for National Night Out', location: 'Lakeville, MN' },
-    { date: 'July 26, 2025', event: 'Private BBQ Event', location: '' }
-  ];
-
   const handleShowClick = (show) => {
     window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(show.location)}`, '_blank');
   };
@@ -20,13 +14,19 @@ export default function Shows() {
         {shows.map((show, index) => (
           <li key={index} className="show-item">
             <p><strong>Date:</strong> {show.date}</p>
+            {show.time && (
+              <p><strong>Time:</strong> {show.time}</p>
+            )}
             <p><strong>Event:</strong> {show.event}</p>
             {show.location && (
               <div>
                 <p><strong>Location:</strong> {show.location}</p>
                 <button onClick={() => handleShowClick(show)}>View on Google Maps</button>
               </div>
-              )}
+            )}
+            {show.ticketsLink && (
+              <p><a className='show-tickets' href={show.ticketsLink} target="_blank" rel="noopener noreferrer">Buy Tickets</a></p>
+            )}
           </li>
         ))}
       </ul>
