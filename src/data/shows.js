@@ -1,5 +1,18 @@
 const shows = [
   {
+    date: 'July 28, 2026',
+    time: '6:00-9:00 PM',
+    event: 'Live Music at the Golf Course',
+    location: 'The Pub Bar & Grill, Crystal Lake Golf Course, Lakeville, MN'
+  },
+  {
+    date: 'June 3, 2026',
+    time: '5:00-8:00 PM',
+    event: 'Live Music & Pizza Night',
+    location: 'Red Barn Farm, Northfield, MN',
+    fbLink: 'https://www.facebook.com/events/1528202948822839'
+  },
+  {
     date: 'April 18, 2026',
     time: '5:00-10:00 PM',
     event: 'Celebrate Me Week Gala Fundraiser',
