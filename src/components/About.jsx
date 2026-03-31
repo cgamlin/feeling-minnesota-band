@@ -1,26 +1,31 @@
 import '../styles/About.css';
 import Logo from './Logo';
 
+import ashleyImage from '../assets/members/ashley.webp';
+import chrisImage from '../assets/members/chris.webp';
+import jeffImage from '../assets/members/jeff.webp';
+import mitchImage from '../assets/members/mitch.webp';
+
 export default function About() {
   const bandMembers = [
     {
       name: 'Ashley',
-      image: 'images/ashley.webp',
+      image: ashleyImage,
       bio: 'Vocals'
     },
     {
       name: 'Chris',
-      image: 'images/chris.webp',
+      image: chrisImage,
       bio: 'Electric Guitar, Vocals'
     },
     {
       name: 'Jeff',
-      image: 'images/jeff.webp',
+      image: jeffImage,
       bio: 'Vocals, Acoustic Guitar'
     },
     {
       name: 'Mitch',
-      image: 'images/mitch.webp',
+      image: mitchImage,
       bio: 'Vocals, Acoustic Guitar'
     }
   ];
@@ -36,7 +41,7 @@ export default function About() {
       <div className="band-members">
         {bandMembers.map((member, index) => (
           <div key={index} className="member">
-            <img src={member.image} alt={member.name} />
+            <img src={member.image} alt={member.name} loading="lazy" decoding="async" width="200" height="200" />
             <h3>{member.name}</h3>
             <p>{member.bio}</p>
           </div>
