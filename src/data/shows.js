@@ -1,16 +1,24 @@
 const shows = [
   {
+    date: 'August 26, 2026',
+    time: '7:00-8:30 PM',
+    event: 'Music in the Park',
+    location: 'Rambling River Park, Farmington, MN',
+    fbLink: 'https://www.facebook.com/share/1BJBgNaDkt/'
+  },
+  {
     date: 'July 28, 2026',
     time: '6:00-9:00 PM',
     event: 'Live Music at the Golf Course',
-    location: 'The Pub Bar & Grill, Crystal Lake Golf Course, Lakeville, MN'
+    location: 'The Pub Bar & Grill, Crystal Lake Golf Course, Lakeville, MN',
+    fbLink: 'https://www.facebook.com/share/1GB1mLPdji/'
   },
   {
     date: 'June 3, 2026',
     time: '5:00-8:00 PM',
     event: 'Live Music & Pizza Night',
     location: 'Red Barn Farm, Northfield, MN',
-    fbLink: 'https://www.facebook.com/events/1528202948822839'
+    fbLink: 'https://www.facebook.com/share/18N7ocjCoP/'
   },
   {
     date: 'April 18, 2026',
